@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import TutorialDataService from "../services/tutorial.service";
 
 export default class Tutorial extends Component {
@@ -153,14 +154,14 @@ export default class Tutorial extends Component {
 
                         {currentTutorial.published ? (
                             <button
-                                className="badge badge-primary mr-2"
+                                className="btn btn-sm btn-primary mr-2"
                                 onClick={() => this.updatePublished(false)}
                             >
                                 UnPublish
                             </button>
                         ) : (
                             <button
-                                className="badge badge-primary mr-2"
+                                className="btn btn-sm btn-primary mr-2"
                                 onClick={() => this.updatePublished(true)}
                             >
                                 Publish
@@ -168,7 +169,7 @@ export default class Tutorial extends Component {
                         )}
 
                         <button
-                            className="badge badge-danger mr-2"
+                            className="btn btn-sm btn-danger mr-2"
                             onClick={this.deleteTutorial}
                         >
                             Delete
@@ -176,7 +177,7 @@ export default class Tutorial extends Component {
 
                         <button
                             type="submit"
-                            className="badge badge-success"
+                            className="btn btn-sm btn-success"
                             onClick={this.updateTutorial}
                         >
                             Update

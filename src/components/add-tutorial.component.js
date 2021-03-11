@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import TutorialDataService from "../services/tutorial.service";
 
 export default class AddTutorial extends Component {
@@ -71,9 +73,18 @@ export default class AddTutorial extends Component {
                 {this.state.submitted ? (
                     <div>
                         <h4>You submitted successfully!</h4>
-                        <button className="btn btn-success" onClick={this.newTutorial}>
-                            Add
-            </button>
+                        <button className="btn btn-sm btn-success mr-2 mt-2 " onClick={this.newTutorial}>
+                            Add another
+                        </button>
+
+                        <Link
+                            className="btn btn-sm btn-primary mt-2 "
+                            to={"/tutorials"}
+                        >
+                            Return to list
+                    </Link>
+
+
                     </div>
                 ) : (
                     <div>
@@ -103,7 +114,7 @@ export default class AddTutorial extends Component {
                             />
                         </div>
 
-                        <button onClick={this.saveTutorial} className="btn btn-success">
+                        <button onClick={this.saveTutorial} className="btn btn-sm btn-success">
                             Submit
             </button>
                     </div>

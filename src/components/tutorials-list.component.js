@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import TutorialDataService from "../services/tutorial.service";
 import { Link } from "react-router-dom";
+
+import TutorialDataService from "../services/tutorial.service";
 
 export default class TutorialsList extends Component {
     constructor(props) {
@@ -100,7 +101,7 @@ export default class TutorialsList extends Component {
                         />
                         <div className="input-group-append">
                             <button
-                                className="btn btn-outline-secondary"
+                                className="btn btn-sm btn-outline-secondary"
                                 type="button"
                                 onClick={this.searchTitle}
                             >
@@ -128,12 +129,22 @@ export default class TutorialsList extends Component {
                             ))}
                     </ul>
 
+
+                    <Link
+                        className="btn btn-sm btn-success mr-2 mt-2 "
+                        to={"/add"}
+                    >
+                        Add
+                    </Link>
+
                     <button
-                        className="m-3 btn btn-sm btn-danger"
+                        className="btn btn-sm btn-danger mt-2"
                         onClick={this.removeAllTutorials}
                     >
                         Remove All
-          </button>
+                    </button>
+
+
                 </div>
                 <div className="col-md-6">
                     {currentTutorial ? (
@@ -160,10 +171,10 @@ export default class TutorialsList extends Component {
 
                             <Link
                                 to={"/tutorials/" + currentTutorial.id}
-                                className="badge badge-warning"
+                                className="btn btn-sm btn-warning"
                             >
                                 Edit
-              </Link>
+                            </Link>
                         </div>
                     ) : (
                         <div>
